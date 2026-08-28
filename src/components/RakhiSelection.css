@@ -187,63 +187,40 @@
 }
 
 @media (max-width: 768px) {
+  .rakhi-selection {
+    padding: 15px;
+  }
+
   .selection-content {
-    padding: 30px 20px;
+    padding: 25px 20px;
     max-width: 95%;
   }
 
   .selection-prompt {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+  }
+
+  .rakhi-single {
+    margin-bottom: 25px;
   }
 
   .rakhi-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-    max-width: 400px;
-    margin: 0 auto 30px;
-  }
-
-  .rakhi-card {
-    padding: 15px;
-  }
-
-  .rakhi-name {
-    font-size: 1.2rem;
-  }
-
-  .rakhi-description {
-    font-size: 0.9rem;
-  }
-
-  .selection-feedback {
-    font-size: 1.3rem;
-  }
-
-  .cta-button {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-  }
-
-  .selected-badge {
-    width: 35px;
-    height: 35px;
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .selection-prompt {
-    font-size: 1.6rem;
-    margin-bottom: 25px;
-  }
-
-  .rakhi-grid {
-    gap: 15px;
+    max-width: 350px;
+    margin: 0 auto 25px;
   }
 
   .rakhi-card {
     padding: 12px;
+    max-width: 160px;
+  }
+
+  .rakhi-image-container {
+    width: 110px;
+    height: 110px;
   }
 
   .rakhi-name {
@@ -255,18 +232,82 @@
   }
 
   .selection-feedback {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin: 15px 0 25px;
   }
 
   .cta-button {
-    padding: 12px 25px;
+    padding: 14px 28px;
     font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 
   .selected-badge {
-    width: 30px;
-    height: 30px;
-    font-size: 1.1rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rakhi-selection {
+    padding: 10px;
+  }
+
+  .selection-content {
+    padding: 20px 15px;
+    max-width: 98%;
+  }
+
+  .selection-prompt {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .rakhi-single {
+    margin-bottom: 20px;
+  }
+
+  .rakhi-grid {
+    gap: 15px;
+    max-width: 300px;
+  }
+
+  .rakhi-card {
+    padding: 10px;
+    max-width: 140px;
+  }
+
+  .rakhi-image-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .rakhi-name {
+    font-size: 1rem;
+  }
+
+  .rakhi-description {
+    font-size: 0.8rem;
+  }
+
+  .selection-feedback {
+    font-size: 1rem;
+    margin: 12px 0 20px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .selected-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
   }
 }
 

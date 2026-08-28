@@ -141,73 +141,102 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .welcome-content {
-    padding: 30px 20px;
-    max-width: 90%;
+    padding: 25px 20px;
+    max-width: 92%;
   }
 
   .greeting {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
+    line-height: 1.1;
   }
 
   .message {
-    font-size: 1.2rem;
-    margin: 15px 0;
+    font-size: 1.1rem;
+    margin: 12px 0;
+    line-height: 1.4;
   }
 
   .cta-button {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    margin-top: 30px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    margin-top: 25px;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 
   .corner-decoration {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
   .corner-decoration.top-left,
   .corner-decoration.top-right {
-    top: 15px;
+    top: 10px;
   }
 
   .corner-decoration.bottom-left,
   .corner-decoration.bottom-right {
-    bottom: 15px;
+    bottom: 10px;
   }
 
   .corner-decoration.top-left {
-    left: 15px;
+    left: 10px;
   }
 
   .corner-decoration.top-right {
-    right: 15px;
+    right: 10px;
   }
 
   .corner-decoration.bottom-left {
-    left: 15px;
+    left: 10px;
   }
 
   .corner-decoration.bottom-right {
-    right: 15px;
+    right: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .greeting {
-    font-size: 2rem;
-  }
-
-  .message {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 12px 25px;
-    font-size: 1rem;
+  .welcome-screen {
+    padding: 15px;
   }
 
   .welcome-content {
-    padding: 25px 15px;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+
+  .greeting {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    line-height: 1.1;
+  }
+
+  .message {
+    font-size: 0.95rem;
+    margin: 10px 0;
+    line-height: 1.4;
+  }
+
+  .promise-message {
+    margin-top: 20px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+
+  .cta-arrow {
+    font-size: 1.2rem;
+  }
+
+  .corner-decoration {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
   }
 }

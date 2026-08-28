@@ -313,78 +313,50 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .tilak-ceremony {
+    padding: 15px;
+  }
+
   .tilak-ceremony-container {
-    padding: 30px 20px;
+    padding: 25px 20px;
     max-width: 95%;
   }
 
+  .ceremony-instructions {
+    margin-bottom: 25px;
+  }
+
   .instruction-text {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
   }
 
   .instruction-subtext {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
   .hint-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin: 8px 0 15px;
+  }
+
+  .gif-container {
+    margin: 25px 0;
+  }
+
+  .tilak-gif {
+    max-width: 300px;
   }
 
   .ceremony-area {
-    height: 380px;
+    height: 350px;
   }
 
   .face {
-    width: 140px;
-    height: 180px;
-  }
-
-  .target-indicator {
-    width: 50px;
-    height: 50px;
-    top: 35px;
-  }
-
-  .applied-tilak {
-    top: 40px;
-  }
-
-  .draggable-tilak {
-    width: 50px;
-    height: 50px;
-  }
-
-  .complete-title {
-    font-size: 1.6rem;
-  }
-
-  .cta-button {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-  }
-
-  .tilak-particle {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .instruction-text {
-    font-size: 1.5rem;
-  }
-
-  .instruction-subtext {
-    font-size: 1rem;
-  }
-
-  .ceremony-area {
-    height: 340px;
-  }
-
-  .face {
-    width: 120px;
-    height: 160px;
+    width: 130px;
+    height: 170px;
   }
 
   .target-indicator {
@@ -402,17 +374,102 @@
     height: 45px;
   }
 
+  .complete-message {
+    padding: 20px;
+  }
+
   .complete-title {
     font-size: 1.4rem;
+    margin-bottom: 15px;
   }
 
   .cta-button {
-    padding: 12px 25px;
+    padding: 14px 28px;
     font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 
   .tilak-particle {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tilak-ceremony {
+    padding: 10px;
+  }
+
+  .tilak-ceremony-container {
+    padding: 20px 15px;
+    max-width: 98%;
+  }
+
+  .instruction-text {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .instruction-subtext {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .hint-text {
+    font-size: 0.85rem;
+    margin: 6px 0 12px;
+  }
+
+  .gif-container {
+    margin: 20px 0;
+  }
+
+  .tilak-gif {
+    max-width: 250px;
+  }
+
+  .ceremony-area {
+    height: 320px;
+  }
+
+  .face {
+    width: 110px;
+    height: 150px;
+  }
+
+  .target-indicator {
+    width: 40px;
+    height: 40px;
+    top: 25px;
+  }
+
+  .applied-tilak {
+    top: 30px;
+  }
+
+  .draggable-tilak {
+    width: 40px;
+    height: 40px;
+  }
+
+  .complete-message {
+    padding: 15px;
+  }
+
+  .complete-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .tilak-particle {
+    font-size: 0.8rem;
   }
 }
 

@@ -178,39 +178,58 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .final-celebration {
+    padding: 15px;
+  }
+
   .final-content {
-    padding: 40px 25px;
+    padding: 35px 25px;
     max-width: 95%;
   }
 
   .final-greeting {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
   }
 
   .final-stats {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 25px;
   }
 
   .stat-item {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .final-messages {
+    margin: 25px 0;
   }
 
   .final-message {
-    font-size: 1.3rem;
-    margin: 20px 0;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    line-height: 1.4;
   }
 
   .final-message.highlight {
-    font-size: 1.4rem;
-    padding: 15px;
+    font-size: 1.3rem;
+    padding: 12px;
+    margin-top: 20px;
   }
 
   .replay-button {
-    padding: 16px 35px;
-    font-size: 1.2rem;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .replay-icon {
+    font-size: 1.3rem;
   }
 
   .effect-rakhi,
@@ -218,36 +237,59 @@
   .effect-flower,
   .effect-heart,
   .effect-particle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 480px) {
+  .final-celebration {
+    padding: 10px;
+  }
+
+  .final-content {
+    padding: 30px 20px;
+    max-width: 98%;
+  }
+
   .final-greeting {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .final-stats {
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
   }
 
   .stat-item {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .final-messages {
+    margin: 20px 0;
   }
 
   .final-message {
-    font-size: 1.1rem;
-    margin: 15px 0;
+    font-size: 1rem;
+    margin: 12px 0;
+    line-height: 1.3;
   }
 
   .final-message.highlight {
-    font-size: 1.2rem;
-    padding: 12px;
+    font-size: 1.1rem;
+    padding: 10px;
+    margin-top: 15px;
   }
 
   .replay-button {
-    padding: 14px 30px;
-    font-size: 1.1rem;
+    padding: 12px 28px;
+    font-size: 1rem;
   }
 
   .replay-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .effect-rakhi,
@@ -255,7 +297,7 @@
   .effect-flower,
   .effect-heart,
   .effect-particle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 

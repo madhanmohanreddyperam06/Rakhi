@@ -223,137 +223,186 @@
 }
 
 @media (max-width: 768px) {
+  .distance-section {
+    padding: 15px;
+  }
+
   .distance-container {
     position: relative;
     padding: 20px 10px;
     gap: 20px;
-    min-height: 700px;
+    min-height: 650px;
+    max-width: 95%;
   }
+
   .location {
-    padding: 20px;
-    min-width: 140px;
+    padding: 18px;
+    min-width: 130px;
     position: relative;
     z-index: 5;
   }
+
   .location-avatar {
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
   }
+
   .location-label {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
   }
+
   .location-sub {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
+
   .connection-line {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 120px;
-    bottom: 120px;
+    top: 110px;
+    bottom: 110px;
     height: auto;
     width: 3px;
   }
+
   .rakhi-traveler {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 120px;
-    width: 50px;
-    height: 50px;
+    top: 110px;
+    width: 45px;
+    height: 45px;
   }
+
   .rakhi-knot {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
+
   .me-location {
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 50%;
     transform: translateX(-50%);
   }
+
   .sister-location {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
   }
+
   .bond-message {
-    padding: 20px;
-    max-width: 90%;
+    padding: 18px;
+    max-width: 92%;
   }
+
   .bond-text {
-    font-size: 1.2rem;
-  }
-  .virtual-message {
-    padding: 20px;
-  }
-  .virtual-text {
-    font-size: 1.4rem;
-  }
-  .cta-button {
-    padding: 15px 30px;
     font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .virtual-message {
+    padding: 18px;
+  }
+
+  .virtual-text {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .cta-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
+  .distance-section {
+    padding: 10px;
+  }
+
   .distance-container {
     padding: 15px 5px;
     gap: 15px;
-    min-height: 600px;
+    min-height: 580px;
+    max-width: 98%;
   }
+
   .location {
-    padding: 15px;
-    min-width: 120px;
+    padding: 12px;
+    min-width: 110px;
   }
+
   .location-avatar {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
   }
+
   .location-label {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.1;
   }
+
   .location-sub {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
+
   .connection-line {
-    top: 100px;
-    bottom: 100px;
+    top: 90px;
+    bottom: 90px;
     width: 2px;
   }
+
   .rakhi-traveler {
-    top: 100px;
-    width: 40px;
-    height: 40px;
+    top: 90px;
+    width: 35px;
+    height: 35px;
   }
+
   .rakhi-knot {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
+
   .me-location {
     top: 0;
   }
+
   .sister-location {
     bottom: 0;
   }
+
   .bond-message {
     padding: 15px;
+    max-width: 95%;
   }
+
   .bond-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.3;
   }
+
   .virtual-message {
     padding: 15px;
   }
+
   .virtual-text {
-    font-size: 1.2rem;
-  }
-  .cta-button {
-    padding: 12px 25px;
     font-size: 1rem;
+    line-height: 1.2;
   }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
   .cta-arrow {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
