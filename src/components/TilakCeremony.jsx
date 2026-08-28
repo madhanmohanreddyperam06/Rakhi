@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import rakhiConfig from '../rakhiConfig';
 import './TilakCeremony.css';
+import tilakGif from '../Photos/rakhi_tilak_animation.gif';
 
 const TilakCeremony = ({ onContinue }) => {
   const [showGif, setShowGif] = useState(false);
@@ -85,7 +86,7 @@ const TilakCeremony = ({ onContinue }) => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/photos/rakhi_tilak_animation.gif"
+                src={tilakGif}
                 alt="Tilak Animation"
                 className="tilak-gif"
               />

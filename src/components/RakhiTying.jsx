@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import rakhiConfig from '../rakhiConfig';
 import './RakhiTying.css';
+import rakhiTyingGif from '../Photos/rakhi_tying_story_9x16_small.gif';
 
 const RakhiTying = ({ onContinue }) => {
   const [showGif, setShowGif] = useState(false);
@@ -85,7 +86,7 @@ const RakhiTying = ({ onContinue }) => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/photos/rakhi_tying_story_9x16_small.gif"
+                src={rakhiTyingGif}
                 alt="Rakhi Tying Animation"
                 className="rakhi-gif"
               />
