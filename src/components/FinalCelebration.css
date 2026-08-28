@@ -55,13 +55,24 @@
 }
 
 .final-greeting {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 30px;
-  text-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+  text-shadow: 0 0 30px rgba(255, 193, 7, 0.8);
   font-family: var(--fonts-heading);
   line-height: 1.2;
   animation: glow 2s ease-in-out infinite alternate;
+}
+
+.final-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 15px;
+  margin: 0 auto 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 193, 7, 0.5);
+  display: block;
 }
 
 @keyframes glow {
@@ -193,6 +204,11 @@
     line-height: 1.2;
   }
 
+  .final-photo {
+    max-width: 300px;
+    margin-bottom: 25px;
+  }
+
   .final-stats {
     flex-direction: column;
     gap: 12px;
@@ -255,6 +271,11 @@
     font-size: 1.6rem;
     margin-bottom: 20px;
     line-height: 1.1;
+  }
+
+  .final-photo {
+    max-width: 250px;
+    margin-bottom: 20px;
   }
 
   .final-stats {

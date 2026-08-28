@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import rakhiConfig from '../rakhiConfig';
 import './FinalCelebration.css';
+import finalPhoto from '../Photos/final-photo.jpeg';
 
 const FinalCelebration = ({ onReplay }) => {
   const [showGreeting, setShowGreeting] = useState(false);
@@ -235,6 +236,20 @@ const FinalCelebration = ({ onReplay }) => {
             >
               {rakhiConfig.finalMessages.greeting}
             </motion.h1>
+          )}
+        </AnimatePresence>
+
+        {/* Photo */}
+        <AnimatePresence>
+          {showGreeting && (
+            <motion.img
+              src={finalPhoto}
+              alt="Celebration Photo"
+              className="final-photo"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+            />
           )}
         </AnimatePresence>
 
