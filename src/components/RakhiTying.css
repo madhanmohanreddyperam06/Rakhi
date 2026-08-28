@@ -1,0 +1,480 @@
+.rakhi-tying {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.rakhi-tying-container {
+  text-align: center;
+  z-index: 1;
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  background: rgba(26, 10, 10, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.tying-instructions {
+  margin-bottom: 30px;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.rakhi-gif {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(255, 193, 7, 0.3);
+}
+
+.instruction-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  font-family: var(--fonts-heading);
+  line-height: 1.2;
+}
+
+.instruction-subtext {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  font-family: var(--fonts-body);
+}
+
+.hint-text {
+  font-size: 1.1rem;
+  margin: 10px 0 20px;
+  font-style: italic;
+  font-family: var(--fonts-body);
+}
+
+.tying-area {
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.wrist-container {
+  position: relative;
+  z-index: 10;
+}
+
+.wrist {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  border-radius: 100px 100px 80px 80px;
+  background: linear-gradient(135deg, #e8beac, #d4a088);
+  box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.2), 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.wrist-skin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px 100px 80px 80px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+}
+
+.wrist-highlight {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 40px;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 20px;
+  filter: blur(10px);
+}
+
+.wrist-shadow {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  width: 50px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
+  border-radius: 25px;
+  filter: blur(15px);
+}
+
+.target-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border: 3px dashed rgba(255, 193, 7, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.draggable-rakhi {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 20;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.draggable-rakhi.dragging {
+  cursor: grabbing;
+  z-index: 100;
+}
+
+.draggable-rakhi.tied {
+  cursor: default;
+}
+
+.rakhi-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.rakhi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--festive-gold);
+  box-shadow: 0 5px 20px rgba(255, 193, 7, 0.4);
+  pointer-events: none;
+}
+
+.rakhi-threads {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.thread {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--festive-red), var(--festive-orange), var(--festive-yellow));
+  border-radius: 2px;
+  transform-origin: left center;
+  opacity: 0;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.thread-left {
+  left: -30px;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.thread-right {
+  right: -30px;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right center;
+}
+
+.thread.wrapped {
+  opacity: 1;
+}
+
+.knot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, var(--festive-gold), var(--festive-orange));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.knot.formed {
+  opacity: 1;
+}
+
+.golden-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.6), rgba(255, 165, 0, 0.3), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.golden-glow.active {
+  opacity: 1;
+}
+
+.effects-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.effect-heart,
+.effect-petal,
+.effect-sparkle {
+  position: absolute;
+  font-size: 2rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.effect-heart {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.8));
+}
+
+.effect-petal {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.6));
+}
+
+.effect-sparkle {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+}
+
+.success-message {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 193, 7, 0.1);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  margin-top: 20px;
+}
+
+.success-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  font-family: var(--fonts-heading);
+}
+
+.success-text {
+  font-size: 1.1rem;
+  margin: 12px 0;
+  line-height: 1.5;
+  font-family: var(--fonts-body);
+}
+
+.cta-button {
+  margin-top: 25px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: 3px solid;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--festive-orange), var(--festive-red));
+  border-color: var(--festive-gold);
+  transition: all 0.3s ease;
+  font-family: var(--fonts-body);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+.cta-text {
+  white-space: nowrap;
+}
+
+.cta-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rakhi-tying-container {
+    padding: 30px 20px;
+    max-width: 95%;
+  }
+
+  .instruction-text {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .instruction-subtext {
+    font-size: 1.1rem;
+  }
+
+  .hint-text {
+    font-size: 1rem;
+  }
+
+  .tying-area {
+    height: 400px;
+  }
+
+  .wrist {
+    width: 150px;
+    height: 220px;
+  }
+
+  .target-indicator {
+    width: 100px;
+    height: 100px;
+  }
+
+  .draggable-rakhi {
+    width: 80px;
+    height: 80px;
+  }
+
+  .success-title {
+    font-size: 1.6rem;
+  }
+
+  .success-text {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+
+  .effect-heart,
+  .effect-petal,
+  .effect-sparkle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction-text {
+    font-size: 1.5rem;
+  }
+
+  .instruction-subtext {
+    font-size: 1rem;
+  }
+
+  .tying-area {
+    height: 350px;
+  }
+
+  .wrist {
+    width: 120px;
+    height: 180px;
+  }
+
+  .target-indicator {
+    width: 80px;
+    height: 80px;
+  }
+
+  .draggable-rakhi {
+    width: 70px;
+    height: 70px;
+  }
+
+  .success-title {
+    font-size: 1.4rem;
+  }
+
+  .success-text {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .effect-heart,
+  .effect-petal,
+  .effect-sparkle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Touch-friendly optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .draggable-rakhi {
+    min-width: 70px;
+    min-height: 70px;
+  }
+
+  .draggable-rakhi:active {
+    transform: scale(1.15);
+  }
+
+  .rakhi-tying-container {
+    padding: 25px 15px;
+  }
+
+  .tying-area {
+    height: 380px;
+  }
+}
+
+/* Prevent text selection during drag */
+.rakhi-tying * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth transitions for position changes */
+.draggable-rakhi {
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
+.draggable-rakhi.dragging {
+  transition: none;
+}

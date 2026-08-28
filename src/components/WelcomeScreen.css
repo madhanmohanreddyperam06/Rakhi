@@ -1,0 +1,213 @@
+.welcome-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rakhi-thread {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--festive-red), var(--festive-yellow), var(--festive-orange), var(--festive-pink), var(--festive-purple));
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.welcome-content {
+  text-align: center;
+  z-index: 1;
+  max-width: 700px;
+  padding: 30px;
+  background: rgba(26, 10, 10, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.greeting {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  font-family: var(--fonts-heading);
+  line-height: 1.2;
+}
+
+.message {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  line-height: 1.5;
+  font-family: var(--fonts-body);
+  opacity: 0.9;
+}
+
+.distance-message {
+  color: var(--light-text);
+  font-style: italic;
+}
+
+.promise-message {
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.cta-button {
+  margin-top: 30px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: 3px solid;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--festive-orange), var(--festive-red));
+  border-color: var(--festive-gold);
+  transition: all 0.3s ease;
+  font-family: var(--fonts-body);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+.cta-text {
+  white-space: nowrap;
+}
+
+.cta-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 3px solid var(--festive-gold);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.corner-decoration.top-left {
+  top: 30px;
+  left: 30px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 20px 0 0 0;
+}
+
+.corner-decoration.top-right {
+  top: 30px;
+  right: 30px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 20px 0 0;
+}
+
+.corner-decoration.bottom-left {
+  bottom: 30px;
+  left: 30px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 20px;
+}
+
+.corner-decoration.bottom-right {
+  bottom: 30px;
+  right: 30px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .greeting {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .message {
+    font-size: 1.2rem;
+    margin: 15px 0;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    margin-top: 30px;
+  }
+
+  .corner-decoration {
+    width: 60px;
+    height: 60px;
+  }
+
+  .corner-decoration.top-left,
+  .corner-decoration.top-right {
+    top: 15px;
+  }
+
+  .corner-decoration.bottom-left,
+  .corner-decoration.bottom-right {
+    bottom: 15px;
+  }
+
+  .corner-decoration.top-left {
+    left: 15px;
+  }
+
+  .corner-decoration.top-right {
+    right: 15px;
+  }
+
+  .corner-decoration.bottom-left {
+    left: 15px;
+  }
+
+  .corner-decoration.bottom-right {
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 2rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .welcome-content {
+    padding: 25px 15px;
+  }
+}

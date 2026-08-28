@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --festive-red: #FF6B6B;
+  --festive-orange: #FFA500;
+  --festive-yellow: #FFD700;
+  --festive-pink: #FF69B4;
+  --festive-purple: #9B59B6;
+  --festive-gold: #FFC107;
+  --dark-bg: #1a0a0a;
+  --light-text: #ffffff;
+  --warm-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--festive-red) 0%, var(--festive-orange) 25%, var(--festive-yellow) 50%, var(--festive-pink) 75%, var(--festive-purple) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -2;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--festive-gold);
+  border-radius: 50%;
+  animation: floatParticle 20s infinite linear;
+  opacity: 0.6;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.diyas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.diya {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  animation: floatDiya 8s ease-in-out infinite;
+}
+
+.diya-flame {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(to top, var(--festive-orange), var(--festive-yellow));
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 0.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 20px var(--festive-orange), 0 0 40px var(--festive-yellow);
+}
+
+.diya-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(to bottom, #CD853F, #8B4513);
+  border-radius: 0 0 50% 50%;
+}
+
+@keyframes floatDiya {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.1) rotate(2deg);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .diya {
+    width: 30px;
+    height: 30px;
+  }
+  .diya-flame {
+    width: 15px;
+    height: 22px;
+    top: -15px;
+  }
+  .diya-base {
+    width: 30px;
+    height: 15px;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

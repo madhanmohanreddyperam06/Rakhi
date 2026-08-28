@@ -1,0 +1,75 @@
+.progress-indicator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--festive-orange), var(--festive-yellow));
+  border-radius: 2px;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+  background: var(--festive-gold);
+  border-color: var(--festive-gold);
+  box-shadow: 0 0 10px var(--festive-gold);
+}
+
+.dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .progress-indicator {
+    bottom: 20px;
+  }
+
+  .progress-bar {
+    width: 150px;
+  }
+
+  .progress-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot-inner {
+    width: 5px;
+    height: 5px;
+  }
+}

@@ -1,0 +1,289 @@
+.rakhi-selection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.selection-content {
+  text-align: center;
+  z-index: 1;
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  background: rgba(26, 10, 10, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.selection-prompt {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  font-family: var(--fonts-heading);
+  line-height: 1.2;
+}
+
+.rakhi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.rakhi-single {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.rakhi-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+  max-width: 180px;
+}
+
+.rakhi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(255, 193, 7, 0.3);
+}
+
+.rakhi-card.selected {
+  border-color: var(--festive-gold);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.4);
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.rakhi-image-container {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.rakhi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.rakhi-card:hover .rakhi-image {
+  transform: scale(1.05);
+}
+
+.selected-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--festive-orange), var(--festive-red));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
+  border: 2px solid var(--festive-gold);
+}
+
+.rakhi-info {
+  text-align: center;
+}
+
+.rakhi-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--festive-gold);
+  font-family: var(--fonts-heading);
+}
+
+.rakhi-description {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin: 0;
+  font-family: var(--fonts-body);
+}
+
+.selection-feedback {
+  font-size: 1.5rem;
+  margin: 20px 0 30px;
+  font-weight: 500;
+  font-family: var(--fonts-body);
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: 3px solid;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--festive-orange), var(--festive-red));
+  border-color: var(--festive-gold);
+  transition: all 0.3s ease;
+  font-family: var(--fonts-body);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+}
+
+.cta-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.cta-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cta-text {
+  white-space: nowrap;
+}
+
+.cta-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .rakhi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .selection-content {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .selection-content {
+    padding: 30px 20px;
+    max-width: 95%;
+  }
+
+  .selection-prompt {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .rakhi-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto 30px;
+  }
+
+  .rakhi-card {
+    padding: 15px;
+  }
+
+  .rakhi-name {
+    font-size: 1.2rem;
+  }
+
+  .rakhi-description {
+    font-size: 0.9rem;
+  }
+
+  .selection-feedback {
+    font-size: 1.3rem;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+
+  .selected-badge {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .selection-prompt {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .rakhi-grid {
+    gap: 15px;
+  }
+
+  .rakhi-card {
+    padding: 12px;
+  }
+
+  .rakhi-name {
+    font-size: 1.1rem;
+  }
+
+  .rakhi-description {
+    font-size: 0.85rem;
+  }
+
+  .selection-feedback {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .selected-badge {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Touch-friendly optimizations for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .rakhi-card {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .rakhi-card:active {
+    transform: scale(0.98);
+    background: rgba(255, 193, 7, 0.15);
+  }
+
+  .cta-button {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}

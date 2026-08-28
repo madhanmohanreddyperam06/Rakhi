@@ -1,0 +1,454 @@
+.tilak-ceremony {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(26, 10, 10, 0.9), rgba(26, 10, 10, 0.7));
+  touch-action: none;
+}
+
+.tilak-ceremony-container {
+  text-align: center;
+  z-index: 1;
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  background: rgba(26, 10, 10, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.ceremony-instructions {
+  margin-bottom: 30px;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.tilak-gif {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(255, 193, 7, 0.3);
+}
+
+.instruction-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  font-family: var(--fonts-heading);
+  line-height: 1.2;
+}
+
+.instruction-subtext {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  font-family: var(--fonts-body);
+}
+
+.hint-text {
+  font-size: 1.1rem;
+  margin: 10px 0 20px;
+  font-style: italic;
+  font-family: var(--fonts-body);
+}
+
+.ceremony-area {
+  position: relative;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.face-container {
+  position: relative;
+  z-index: 10;
+}
+
+.face {
+  width: 180px;
+  height: 220px;
+  position: relative;
+  border-radius: 90px 90px 100px 100px;
+  background: linear-gradient(135deg, #e8beac, #d4a088);
+  box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.2), 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.face-skin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 90px 90px 100px 100px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+}
+
+.forehead-area {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 60px;
+  border-radius: 40px 40px 20px 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.face-highlight {
+  position: absolute;
+  top: 30px;
+  left: 25px;
+  width: 35px;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), transparent);
+  border-radius: 18px;
+  filter: blur(10px);
+}
+
+.target-indicator {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border: 3px dashed rgba(255, 193, 7, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.applied-tilak {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.tilak-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.6), rgba(255, 165, 0, 0.3), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tilak-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, var(--festive-red), var(--festive-orange));
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.6);
+}
+
+.draggable-tilak {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 20;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.draggable-tilak.dragging {
+  cursor: grabbing;
+  z-index: 100;
+}
+
+.draggable-tilak.applied {
+  cursor: default;
+}
+
+.tilak-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tilak-base {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  box-shadow: 0 5px 20px rgba(255, 193, 7, 0.3);
+  overflow: hidden;
+}
+
+.tilak-red {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle, var(--festive-red), var(--festive-orange));
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.tilak-yellow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: var(--festive-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.tilak-rice {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.tilak-particle {
+  position: absolute;
+  font-size: 1.2rem;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+}
+
+.complete-message {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 193, 7, 0.1);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  margin-top: 20px;
+}
+
+.complete-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  font-family: var(--fonts-heading);
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border: 3px solid;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--festive-orange), var(--festive-red));
+  border-color: var(--festive-gold);
+  transition: all 0.3s ease;
+  font-family: var(--fonts-body);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+.cta-text {
+  white-space: nowrap;
+}
+
+.cta-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tilak-ceremony-container {
+    padding: 30px 20px;
+    max-width: 95%;
+  }
+
+  .instruction-text {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .instruction-subtext {
+    font-size: 1.1rem;
+  }
+
+  .hint-text {
+    font-size: 1rem;
+  }
+
+  .ceremony-area {
+    height: 380px;
+  }
+
+  .face {
+    width: 140px;
+    height: 180px;
+  }
+
+  .target-indicator {
+    width: 50px;
+    height: 50px;
+    top: 35px;
+  }
+
+  .applied-tilak {
+    top: 40px;
+  }
+
+  .draggable-tilak {
+    width: 50px;
+    height: 50px;
+  }
+
+  .complete-title {
+    font-size: 1.6rem;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+
+  .tilak-particle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction-text {
+    font-size: 1.5rem;
+  }
+
+  .instruction-subtext {
+    font-size: 1rem;
+  }
+
+  .ceremony-area {
+    height: 340px;
+  }
+
+  .face {
+    width: 120px;
+    height: 160px;
+  }
+
+  .target-indicator {
+    width: 45px;
+    height: 45px;
+    top: 30px;
+  }
+
+  .applied-tilak {
+    top: 35px;
+  }
+
+  .draggable-tilak {
+    width: 45px;
+    height: 45px;
+  }
+
+  .complete-title {
+    font-size: 1.4rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .tilak-particle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Touch-friendly optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .draggable-tilak {
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .draggable-tilak:active {
+    transform: scale(1.2);
+  }
+
+  .tilak-ceremony-container {
+    padding: 25px 15px;
+  }
+
+  .ceremony-area {
+    height: 360px;
+  }
+}
+
+/* Prevent text selection during drag */
+.tilak-ceremony * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth transitions for position changes */
+.draggable-tilak {
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
+.draggable-tilak.dragging {
+  transition: none;
+}
