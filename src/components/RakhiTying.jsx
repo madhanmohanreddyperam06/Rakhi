@@ -85,7 +85,7 @@ const RakhiTying = ({ onContinue }) => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/src/photos/rakhi_tying_story_9x16_small.gif"
+                src="/photos/rakhi_tying_story_9x16_small.gif"
                 alt="Rakhi Tying Animation"
                 className="rakhi-gif"
               />

@@ -85,7 +85,7 @@ const TilakCeremony = ({ onContinue }) => {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="/src/photos/rakhi_tilak_animation.gif"
+                src="/photos/rakhi_tilak_animation.gif"
                 alt="Tilak Animation"
                 className="tilak-gif"
               />
